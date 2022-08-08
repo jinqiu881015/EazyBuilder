@@ -65,7 +65,7 @@ spring:
     host: 127.0.0.1
     port: 25
     default-encoding: UTF-8
-    username: d-fesci
+    username: xxxx
     password: password
     from: xxx@eamil.com
     subject: "(DevOps平台)CI构建报告"
@@ -159,7 +159,7 @@ message:
   fanoutExchange: ci.pipeline.exchange
   queue: ci.pipeline.queue
   routingKey: ci.*
-  confirmCallbackBean: eazybuilderRabbitmqConfirmCallbackService
+  confirmCallbackBean: issRabbitmqConfirmCallbackService
   updateProject: ci.project.update
   returnCallbackBean:
   eazybuilderNotifyFanoutExchange: eazybuilder.notify.exchange
@@ -184,22 +184,18 @@ portal:
 upms:
   gateway:
     url: "http://upms-web-devxxxxx/system/openapi/v1/"
-    token: "Bearer MTAxNzgxNTE2MzIwNzY4"
+    token: "Bearer xxxxx"
 redmine:
-  #流水线部署完默认用户邮箱
-  userEmail: xxx@eamil.com
-  #流水线部署完默认需求号
-  eazybuilderueCode: 0
   #根据当前用户查询项目组
-  getProjectsUrl: http://demand-managementxxxxx/demand-management/project/getProjectsByUserName
+  getProjectsUrl: http://demand-management.eazybuilder-devops.cn/demand-management/project/getProjectsByUserName
   #根据项目组查询sprints
-  getSprintsUrl: http://demand-managementxxxxx//demand-management/api/sprints/getSprintsByProjectId
+  getSprintsUrl: http://demand-management.eazybuilder-devops.cn//demand-management/api/sprints/getSprintsByProjectId
   #根据sprint 查询对应的需求
-  geteazybuilderuesUrl: http://demand-managementxxxxx/demand-management/api/eazybuilderuesTable/geteazybuilderuesBySprintId
-  #根据eazybuilderuesId查询明细
-  geteazybuilderuesDetailUrl: http://demand-managementxxxxx/demand-management/api/eazybuilderuesTable/geteazybuilderueById
+  getIssuesUrl: http://demand-management.eazybuilder-devops.cn/demand-management/api/issuesTable/getIssuesBySprintId
+  #根据issuesId查询明细
+  getIssuesDetailUrl: http://demand-management.eazybuilder-devops.cn/demand-management/api/issuesTable/getIssueById
   #根据sprintsid查询看板信息
-  getSprintsById: http://demand-managementxxxxx/demand-management/api/sprints/
+  getSprintsById: http://demand-management.eazybuilder-devops.cn/demand-management/api/sprints/
 #门禁默认值
 guard:
   bug_blocker_name: 默认BUG阻断阈值
